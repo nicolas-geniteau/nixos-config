@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.helix = {
     enable = true;
@@ -45,4 +46,8 @@
       };
     };
   };
+
+  home.packages = [
+    pkgs.nil
+  ];
 }
