@@ -1,18 +1,31 @@
 let
-  pow = n : i :
-    if i == 1 then n
-    else if i == 0 then 1
+  pow = n: i:
+    if i == 1
+    then n
+    else if i == 0
+    then 1
     else n * pow n (i - 1);
 
-  tags_info = builtins.genList (x: {tag = x + 1; tag_bit = pow 2  x;}) 9;
+  tags_info =
+    builtins.genList (x: {
+      tag = x + 1;
+      tag_bit = pow 2 x;
+    })
+    9;
 
   generateTagsAttributes = (
     nameFn: valueFn:
-    builtins.listToAttrs (
-      map (tag_info: { name = nameFn tag_info; value = valueFn tag_info;}) tags_info
-    ));
+      builtins.listToAttrs (
+        map (tag_info: {
+          name = nameFn tag_info;
+          value = valueFn tag_info;
+        })
+        tags_info
+      )
+  );
 
-  tags_mapping = generateTagsAttributes
+  tags_mapping =
+    generateTagsAttributes
     (tag_info: "Super ${toString tag_info.tag}")
     (tag_info: "set-focused-tags ${toString tag_info.tag_bit}")
     // generateTagsAttributes
@@ -23,8 +36,7 @@ let
     (tag_info: "toggle-focused-tags ${toString tag_info.tag_bit}")
     // generateTagsAttributes
     (tag_info: "Super+Shift+Control ${toString tag_info.tag}")
-    (tag_info: "toggle-view-tags ${toString tag_info.tag_bit}")
-    ;
+    (tag_info: "toggle-view-tags ${toString tag_info.tag_bit}");
 
   # For normal and locked modes
   common_mapping = {
@@ -40,9 +52,7 @@ let
     "None  XF86MonBrightnessUp" = "spawn 'brightnessctl set +5%'";
     "None  XF86MonBrightnessDown" = "spawn 'brightnessctl set 5%-'";
   };
-
-in
-{
+in {
   wayland.windowManager.river = {
     enable = true;
 
@@ -56,36 +66,39 @@ in
       focus-follows-cursor = "always";
 
       map = {
-        normal = {
-          "Super P" = "spawn fuzzel";
-          "Super+Shift Return" = "spawn alacritty";
-          "Super Z" = "spawn waylock";
+        normal =
+          {
+            "Super P" = "spawn fuzzel";
+            "Super+Shift Return" = "spawn alacritty";
+            "Super Z" = "spawn waylock";
 
-          "Super Tab" = "focus-previous-tags";
-          "Super+Shift C" = "close";
-          "Super+Shift E" = "exit";
+            "Super Tab" = "focus-previous-tags";
+            "Super+Shift C" = "close";
+            "Super+Shift E" = "exit";
 
-          "Super J" = "focus-view next";
-          "Super K" = "focus-view previous";
-          "Super+Shift J" = "swap next";
-          "Super+Shift K" = "swap previous";
-          "Super Return" = "zoom";
-          "Super H" = "send-layout-cmd rivertile 'main-ratio -0.05'";
-          "Super L" = "send-layout-cmd rivertile 'main-ratio +0.05'";
-          "Super+Shift H" = "send-layout-cmd rivertile 'main-count +1'";
-          "Super+Shift L" = "send-layout-cmd rivertile 'main-count -1'";
+            "Super J" = "focus-view next";
+            "Super K" = "focus-view previous";
+            "Super+Shift J" = "swap next";
+            "Super+Shift K" = "swap previous";
+            "Super Return" = "zoom";
+            "Super H" = "send-layout-cmd rivertile 'main-ratio -0.05'";
+            "Super L" = "send-layout-cmd rivertile 'main-ratio +0.05'";
+            "Super+Shift H" = "send-layout-cmd rivertile 'main-count +1'";
+            "Super+Shift L" = "send-layout-cmd rivertile 'main-count -1'";
 
-          "Super Period" = "focus-output next";
-          "Super Comma" = "focus-output previous";
-          "Super+Shift Period" = "send-to-output next";
-          "Super+Shift Comma" = "send-to-output previous";
+            "Super Period" = "focus-output next";
+            "Super Comma" = "focus-output previous";
+            "Super+Shift Period" = "send-to-output next";
+            "Super+Shift Comma" = "send-to-output previous";
 
-          "Super 0" = "set-focused-tags ${toString ((pow 2 32) - 1)}";
-          "Super+Shift 0" = "set-view-tags ${toString ((pow 2 32) - 1)}";
+            "Super 0" = "set-focused-tags ${toString ((pow 2 32) - 1)}";
+            "Super+Shift 0" = "set-view-tags ${toString ((pow 2 32) - 1)}";
 
-          "Super Space" = "toggle-float";
-          "Super F" = "toggle-fullscreen";
-        } // tags_mapping // common_mapping;
+            "Super Space" = "toggle-float";
+            "Super F" = "toggle-fullscreen";
+          }
+          // tags_mapping
+          // common_mapping;
 
         locked = {} // common_mapping;
       };
@@ -103,9 +116,8 @@ in
       default-layout = "rivertile";
     };
 
-    extraConfig =
-    ''
-    rivertile -view-padding 0 -outer-padding 0 &
+    extraConfig = ''
+      rivertile -view-padding 0 -outer-padding 0 &
     '';
   };
 }

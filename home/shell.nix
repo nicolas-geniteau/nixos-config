@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   home.shellAliases = {
     vim = "hx";
   };
@@ -8,13 +7,13 @@
     enable = true;
 
     historyControl = ["ignoredups" "ignorespace"];
-    historyFile = "$XDG_STATE_HOME/bash/history";  # directory must exists, see below
+    historyFile = "$XDG_STATE_HOME/bash/history"; # directory must exists, see below
     historyFileSize = -1;
 
     shellOptions = ["extglob"];
 
     bashrcExtra = ''
-    bind '"\t":menu-complete'
+      bind '"\t":menu-complete'
     '';
   };
 
