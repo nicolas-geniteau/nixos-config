@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   home.shellAliases = {
     vim = "hx";
@@ -57,5 +57,19 @@
   programs.lsd = {
     enable = true;
     enableAliases = true;
+  };
+
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      font = {
+        normal = {
+          family = "Hack Nerd Font Mono";
+          style = "Regular";
+        };
+        size = 8.5;
+      };
+      colors.primary.background = "#282828";
+    };
   };
 }

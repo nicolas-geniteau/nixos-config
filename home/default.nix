@@ -2,9 +2,11 @@
 
 {
   imports = [
+    ./browsers.nix
     ./common.nix
     ./editors.nix
     ./shell.nix
+    ./wayland
     ./xdg.nix
   ];
 

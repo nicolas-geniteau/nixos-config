@@ -6,8 +6,12 @@
     homeDirectory = "/home/nicolas";
   };
 
-  home.packages = [
-    pkgs.bottom
+  home.packages = with pkgs; [
+    fuzzel
+    mpv
+
+    pamixer
+    pavucontrol
   ];
 
   nix.gc = {
