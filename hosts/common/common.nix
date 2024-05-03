@@ -21,6 +21,7 @@
 
   security.sudo.wheelNeedsPassword = false;
   security.polkit.enable = true;
+  security.pam.services.waylock = {};
 
   hardware.opengl.enable = true;
 
