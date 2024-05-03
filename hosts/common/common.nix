@@ -1,9 +1,8 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
+  imports = [
+    ./network.nix
+  ];
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   boot.loader.systemd-boot.enable = true;
@@ -28,12 +27,7 @@
   environment.systemPackages = with pkgs; [
     git
     vim
-    wget
   ];
-
-  services.openssh = {
-    enable = true;
-  };
 
   system.stateVersion = "23.11";
 }
