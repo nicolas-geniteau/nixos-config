@@ -10,11 +10,14 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
   };
 
   outputs = inputs @ {
     nixpkgs,
     home-manager,
+    pre-commit-hooks,
     ...
   }: {
     nixosConfigurations.nicolas = nixpkgs.lib.nixosSystem {
@@ -31,6 +34,16 @@
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
         }
       ];
+    };
+    checks = {
+      x86_64-linux = {
+        pre-commit-check = pre-commit-hooks.lib.x86_64-linux.run {
+          src = ./.;
+          hooks = {
+            alejandra.enable = true;
+          };
+        };
+      };
     };
   };
 }
