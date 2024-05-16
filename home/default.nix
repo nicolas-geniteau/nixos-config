@@ -5,6 +5,7 @@
     ./editors.nix
     ./git.nix
     ./shell.nix
+    ./ssh.nix
     ./wayland
     ./xdg.nix
   ];
