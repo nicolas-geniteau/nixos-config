@@ -111,16 +111,16 @@
 
     style = ''
       window#waybar {
-          background-color: #282828;
-          color: #ffffff;
+        background-color: #282828;
+        color: #ffffff;
       }
 
       #window {
-          padding: 0px 10px;
+        padding: 0px 10px;
       }
 
       #window.focused {
-          background-color: #005577;
+        background-color: #005577;
       }
 
       #tags button {
@@ -128,7 +128,11 @@
       	color: #fdf6e3;
       }
       #tags button.focused {
-      	color: #268bd2;
+      	background-color: #268bd2;
+      	color: #fdf6e3;
+      }
+      #tags button.occupied:not(.focused) {
+        color: #268bd2;
       }
       #tags button:hover {
       	box-shadow: inherit;
@@ -157,75 +161,75 @@
       #scratchpad,
       #power-profiles-daemon,
       #mpd {
-          padding: 0 10px;
-          color: #ffffff;
+        padding: 0 10px;
+        color: #ffffff;
       }
 
       #clock {
-          background-color: #005577;
+        background-color: #005577;
       }
 
       #battery.charging, #battery.plugged , #battery.full {
-          color: #ffffff;
-          background-color: #26A65B;
+        color: #ffffff;
+        background-color: #26A65B;
       }
 
       /* Using steps() instead of linear as a timing function to limit cpu usage */
       #battery.critical:not(.charging) {
-          background-color: #f53c3c;
-          color: #ffffff;
-          animation-name: blink;
-          animation-duration: 0.5s;
-          animation-timing-function: steps(12);
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
+        background-color: #f53c3c;
+        color: #ffffff;
+        animation-name: blink;
+        animation-duration: 0.5s;
+        animation-timing-function: steps(12);
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
       }
 
       #network:not(.disconnected) {
-          background-color: #26A65B;
+        background-color: #26A65B;
       }
 
       #pulseaudio.muted {
-          background-color: #90b1b1;
-          color: #2a5c45;
+        background-color: #90b1b1;
+        color: #2a5c45;
       }
 
       #wireplumber {
-          background-color: #fff0f5;
-          color: #000000;
+        background-color: #fff0f5;
+        color: #000000;
       }
 
       #wireplumber.muted {
-          background-color: #f53c3c;
+        background-color: #f53c3c;
       }
 
       #temperature.critical {
-          background-color: #eb4d4b;
+        background-color: #eb4d4b;
       }
 
       #keyboard-state {
-          background: #97e1ad;
-          color: #000000;
-          padding: 0 0px;
-          margin: 0 5px;
-          min-width: 16px;
+        background: #97e1ad;
+        color: #000000;
+        padding: 0 0px;
+        margin: 0 5px;
+        min-width: 16px;
       }
 
       #privacy {
-          padding: 0;
+        padding: 0;
       }
 
       #privacy-item {
-          padding: 0 5px;
-          color: white;
+        padding: 0 5px;
+        color: white;
       }
 
       #privacy-item.screenshare {
-          background-color: #cf5700;
+        background-color: #cf5700;
       }
 
       #privacy-item.audio-in {
-          background-color: #1ca000;
+        background-color: #1ca000;
       }
     '';
   };
