@@ -5,11 +5,14 @@
   };
 
   home.packages = with pkgs; [
-    fuzzel
-    mpv
-
-    pamixer
     pavucontrol
+
+    imv
+    mpv
+    zathura
+
+    slurp
+    wayshot
   ];
 
   nix.gc = {
