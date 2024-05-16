@@ -49,8 +49,8 @@ let
     "None XF86AudioPrev" = "spawn 'playerctl previous'";
     "None XF86AudioNext" = "spawn 'playerctl next'";
 
-    "None  XF86MonBrightnessUp" = "spawn 'brightnessctl set +5%'";
-    "None  XF86MonBrightnessDown" = "spawn 'brightnessctl set 5%-'";
+    "None XF86MonBrightnessUp" = "spawn 'brightnessctl set +5%'";
+    "None XF86MonBrightnessDown" = "spawn 'brightnessctl set 5%-'";
   };
 in {
   wayland.windowManager.river = {
@@ -88,8 +88,8 @@ in {
 
             "Super Period" = "focus-output next";
             "Super Comma" = "focus-output previous";
-            "Super+Shift Period" = "send-to-output next";
-            "Super+Shift Comma" = "send-to-output previous";
+            "Super+Shift Period" = "send-to-output -current-tags next";
+            "Super+Shift Comma" = "send-to-output -current-tags previous";
 
             "Super 0" = "set-focused-tags ${toString ((pow 2 32) - 1)}";
             "Super+Shift 0" = "set-view-tags ${toString ((pow 2 32) - 1)}";
