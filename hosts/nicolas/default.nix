@@ -10,4 +10,6 @@
   networking.hostName = "nicolas";
 
   networking.wireless.iwd.enable = true;
+
+  services.pcscd.enable = true;
 }

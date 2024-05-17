@@ -9,6 +9,7 @@
     ./tools.nix
     ./wayland
     ./xdg.nix
+    ./yubikey.nix
   ];
 
   home.stateVersion = "23.11";
