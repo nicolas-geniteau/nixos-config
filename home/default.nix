@@ -4,6 +4,7 @@
     ./common.nix
     ./editors.nix
     ./git.nix
+    ./pass.nix
     ./shell.nix
     ./ssh.nix
     ./tools.nix

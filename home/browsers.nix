@@ -3,7 +3,12 @@
     enable = true;
   };
 
-  home.packages = with pkgs; [
-    brave
-  ];
+  programs.chromium = {
+    enable = true;
+    package = pkgs.brave;
+
+    extensions = [
+      {id = "bhghoamapcdpbohphigoooaddinpkbai";} # Authenticator
+    ];
+  };
 }
