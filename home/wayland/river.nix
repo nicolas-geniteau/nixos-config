@@ -65,6 +65,8 @@ in {
 
       focus-follows-cursor = "always";
 
+      keyboard-layout = "-options compose:rctrl us";
+
       map = {
         normal =
           {
