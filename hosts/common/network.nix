@@ -13,6 +13,7 @@
         networkConfig = {
           DHCP = "ipv4";
           IPv6AcceptRA = true;
+          Domains = ["."];
         };
         dhcpV4Config = {
           UseDNS = false;
@@ -26,6 +27,7 @@
         networkConfig = {
           DHCP = "ipv4";
           IPv6AcceptRA = true;
+          Domains = ["."];
         };
         dhcpV4Config = {
           UseDNS = false;
