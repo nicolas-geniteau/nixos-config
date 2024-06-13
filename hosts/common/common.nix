@@ -14,8 +14,7 @@
 
   programs.dconf.enable = true;
 
-  environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
-
+  environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
 
   users.users.nicolas = {
     isNormalUser = true;

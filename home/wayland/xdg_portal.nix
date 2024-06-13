@@ -10,7 +10,7 @@
       pkgs.xdg-desktop-portal-wlr
       pkgs.xdg-desktop-portal-gtk
     ];
-    configPackages = [ pkgs.river ];
+    configPackages = [pkgs.river];
   };
 
   dconf.settings = {
