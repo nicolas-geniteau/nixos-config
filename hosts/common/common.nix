@@ -12,6 +12,11 @@
 
   time.timeZone = "Europe/Paris";
 
+  programs.dconf.enable = true;
+
+  environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
+
+
   users.users.nicolas = {
     isNormalUser = true;
     extraGroups = ["wheel" "input"];

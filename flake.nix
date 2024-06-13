@@ -6,7 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
-    nixos-config-work.url = "flake:nixos-config-work";  # Must be added to flake registry!
+    nixos-config-work.url = "flake:nixos-config-work"; # Must be added to flake registry!
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -29,18 +29,20 @@
         work_inputs = inputs.nixos-config-work.outputs.work_inputs;
       };
 
-      modules = [
-        ./hosts/nicolas
+      modules =
+        [
+          ./hosts/nicolas
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.nicolas = import ./home;
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.nicolas = import ./home;
 
-          home-manager.extraSpecialArgs = {inherit inputs;};
-        }
-      ] ++ inputs.nixos-config-work.outputs.host_configs;
+            home-manager.extraSpecialArgs = {inherit inputs;};
+          }
+        ]
+        ++ inputs.nixos-config-work.outputs.host_configs;
     };
     checks = {
       x86_64-linux = {
