@@ -105,10 +105,10 @@
         "update-systemd-resolved": "update-systemd-resolved"
       },
       "locked": {
-        "dirtyRev": "687cc4c49914bb8ef5ddfa1cdff418451ca068b2-dirty",
-        "dirtyShortRev": "687cc4c-dirty",
-        "lastModified": 1718272695,
-        "narHash": "sha256-2R3dfOzfnmaz4ESv82F6csjXrzFvE4dywotam6pkDcU=",
+        "dirtyRev": "c8b1c8be09920b5b2d4e6aa39934a4250aaec2c6-dirty",
+        "dirtyShortRev": "c8b1c8b-dirty",
+        "lastModified": 1718274722,
+        "narHash": "sha256-Ow7A3DuTQ/cROP1+5Te8xoMwu1Nz8V/kmKlwyrRSZ4g=",
         "type": "git",
         "url": "file:///home/nicolas/.nixos/nixos-config-work"
       },
