@@ -15,7 +15,6 @@
     # python
     poetry
     python3
-    ruff
     rye
     uv
   ];

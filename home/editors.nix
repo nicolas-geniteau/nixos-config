@@ -44,9 +44,25 @@
         C-right = ["move_next_word_start" "move_char_left" "move_char_right"];
       };
     };
+
+    languages = {
+      # the language-server option currently requires helix from the master branch at https://github.com/helix-editor/helix/
+      language-server.ruff = with pkgs; {
+        command = "${ruff}/bin/ruff";
+        args = ["server" "--preview"];
+      };
+
+      language = [{
+        name = "python";
+        auto-format = false;
+        language-servers = ["ruff" "pylsp"];
+      }];
+    };
   };
 
-  home.packages = [
-    pkgs.nil
+  home.packages = with pkgs; [
+    nil
+    python311Packages.python-lsp-server
+    ruff
   ];
 }
