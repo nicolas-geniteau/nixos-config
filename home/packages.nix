@@ -17,5 +17,7 @@
     python3
     rye
     uv
+
+    kubectl
   ];
 }

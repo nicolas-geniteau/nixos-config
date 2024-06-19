@@ -4,6 +4,7 @@
       ./browsers.nix
       ./common.nix
       ./editors.nix
+      ./gcloud.nix
       ./git.nix
       ./packages.nix
       ./pass.nix
