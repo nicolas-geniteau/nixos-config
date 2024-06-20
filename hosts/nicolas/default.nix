@@ -3,6 +3,7 @@
     ../common/common.nix
     ./hardware-configuration.nix
     ../modules/sound.nix
+    ../modules/podman.nix
     ../modules/printers.nix
   ];
 
