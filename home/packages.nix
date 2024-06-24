@@ -8,6 +8,7 @@
 
     slurp
     wayshot
+    wl-clipboard-rs
 
     ldns
     tcpdump
@@ -18,6 +19,7 @@
     rye
     uv
 
+    awscli2
     kubectl
   ];
 }
