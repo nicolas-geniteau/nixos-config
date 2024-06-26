@@ -29,7 +29,7 @@
   security.polkit.enable = true;
   security.pam.services.waylock = {};
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   environment.systemPackages = with pkgs; [
     git
