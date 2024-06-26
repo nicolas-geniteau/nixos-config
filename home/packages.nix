@@ -22,5 +22,6 @@
 
     awscli2
     kubectl
+    vault-bin
   ];
 }
