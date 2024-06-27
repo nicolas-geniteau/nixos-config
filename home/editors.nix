@@ -52,11 +52,13 @@
         args = ["server" "--preview"];
       };
 
-      language = [{
-        name = "python";
-        auto-format = false;
-        language-servers = ["ruff" "pylsp"];
-      }];
+      language = [
+        {
+          name = "python";
+          auto-format = false;
+          language-servers = ["ruff" "pylsp"];
+        }
+      ];
     };
   };
 

@@ -17,5 +17,5 @@
 
   services.pcscd.enable = true;
 
-  users.users.nicolas.extraGroups = [ "scanner" "lp" ];
+  users.users.nicolas.extraGroups = ["scanner" "lp"];
 }
