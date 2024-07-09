@@ -64,7 +64,5 @@
 
   home.packages = with pkgs; [
     nil
-    python311Packages.python-lsp-server
-    ruff
   ];
 }

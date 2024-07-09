@@ -8,6 +8,7 @@
       ./git.nix
       ./packages.nix
       ./pass.nix
+      ./python.nix
       ./shell.nix
       ./ssh.nix
       ./tools.nix

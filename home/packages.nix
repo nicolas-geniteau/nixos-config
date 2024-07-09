@@ -1,24 +1,19 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    pavucontrol
+    gitui
+    gnumake
+    jq
+    ldns
+    tcpdump
 
     imv
     mpv
     zathura
-
     simple-scan
+    pavucontrol
     slurp
     wayshot
     wl-clipboard-rs
-
-    ldns
-    tcpdump
-
-    # python
-    poetry
-    python3
-    rye
-    uv
 
     awscli2
     kubectl
