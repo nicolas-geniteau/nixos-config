@@ -69,6 +69,13 @@
         size = 8.5;
       };
       colors.primary.background = "#282828";
+      keyboard.bindings = [
+        {
+          key = "N";
+          mods = "Control";
+          action = "CreateNewWindow";
+        }
+      ];
     };
   };
 }
