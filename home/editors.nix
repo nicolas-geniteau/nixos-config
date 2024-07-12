@@ -64,5 +64,6 @@
 
   home.packages = with pkgs; [
     nil
+    zed-editor
   ];
 }
