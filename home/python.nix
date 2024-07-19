@@ -10,6 +10,7 @@
   home.packages = with pkgs; [
     jetbrains.pycharm-professional
     poetry
+    pyright
     python3
     python311Packages.python-lsp-server
     ruff

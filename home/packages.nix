@@ -5,6 +5,7 @@
     jq
     ldns
     tcpdump
+    unzip
 
     imv
     mpv
@@ -16,7 +17,12 @@
     wl-clipboard-rs
 
     awscli2
+    docker-compose
     kubectl
+    terraform
+    tflint
     vault-bin
+
+    pre-commit
   ];
 }
