@@ -14,6 +14,7 @@
           DHCP = "ipv4";
           IPv6AcceptRA = true;
           Domains = ["."];
+          MulticastDNS = "resolve";
         };
         dhcpV4Config = {
           UseDNS = false;
@@ -28,6 +29,7 @@
           DHCP = "ipv4";
           IPv6AcceptRA = true;
           Domains = ["."];
+          MulticastDNS = "resolve";
         };
         dhcpV4Config = {
           UseDNS = false;
@@ -59,7 +61,7 @@
       "1.0.0.1#one.one.one.one"
     ];
     extraConfig = ''
-      MulticastDNS=false
+      MulticastDNS=resolve
     '';
   };
 
