@@ -8,11 +8,14 @@
   };
 
   home.packages = with pkgs; [
+    (python3.withPackages(ppkgs: [
+      ppkgs.cryptography
+      ppkgs.python-lsp-server
+    ]))
+
     jetbrains.pycharm-professional
     poetry
     pyright
-    python3
-    python311Packages.python-lsp-server
     ruff
     rye
     uv
