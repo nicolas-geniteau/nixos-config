@@ -47,6 +47,7 @@
         error_symbol = "[✗](bold red)";
       };
       aws.disabled = true;
+      battery.disabled = true;
       docker_context.disabled = true;
       gcloud.disabled = true;
       git_status.disabled = true;
