@@ -1,10 +1,12 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    fd
     gitui
     gnumake
     jq
     ldns
     tcpdump
+    tig
     unzip
 
     imv

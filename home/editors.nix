@@ -64,6 +64,7 @@
 
   home.packages = with pkgs; [
     nil
+    terraform-ls
     zed-editor
   ];
 }
