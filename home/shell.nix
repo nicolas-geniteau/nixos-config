@@ -46,12 +46,17 @@
         success_symbol = "[➜](bold green)";
         error_symbol = "[✗](bold red)";
       };
+      directory.truncate_to_repo = false;
+
       aws.disabled = true;
       battery.disabled = true;
       docker_context.disabled = true;
       gcloud.disabled = true;
       git_status.disabled = true;
       line_break.disabled = true;
+      package.disabled = true;
+      pijul_channel.disabled = true;
+      pulumi.disabled = true;
     };
   };
 
