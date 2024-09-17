@@ -2,15 +2,27 @@
   home.packages = with pkgs; [
     brightnessctl
     fuzzel
-    nerdfonts
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
     pamixer
     playerctl
     waylock
     wlr-randr
+
+    font-awesome
+    (nerdfonts.override { fonts = [ "Hack" ]; })
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
   ];
+
+  fonts.fontconfig = {
+    enable = true;
+
+    defaultFonts = {
+      emoji = [ "Noto Color Emoji" ];
+      monospace = [ "Hack Nerd Font Mono" ];
+    };
+
+  };
 
   services.dunst.enable = true;
 }
