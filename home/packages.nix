@@ -9,15 +9,6 @@
     tig
     unzip
 
-    imv
-    mpv
-    zathura
-    simple-scan
-    pavucontrol
-    slurp
-    wayshot
-    wl-clipboard-rs
-
     awscli2
     docker-compose
     kubectl

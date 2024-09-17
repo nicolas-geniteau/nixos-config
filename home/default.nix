@@ -3,6 +3,7 @@
     [
       ./browsers.nix
       ./common.nix
+      ./desktop.nix
       ./editors.nix
       ./gcloud.nix
       ./git.nix
