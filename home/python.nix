@@ -4,6 +4,7 @@
     settings = {
       virtualenvs.create = true;
       virtualenvs.in-project = true;
+      experimental.system-git-client = true;
     };
   };
 
