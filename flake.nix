@@ -46,6 +46,28 @@
         ]
         ++ inputs.nixos-config-work.outputs.host_configs;
     };
+    nixosConfigurations.nuc = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+        work_inputs = inputs.nixos-config-work.outputs.work_inputs;
+      };
+
+      modules =
+        [
+          ./hosts/nuc
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.nicolas = import ./home;
+
+            home-manager.extraSpecialArgs = {inherit inputs;};
+          }
+        ]
+        ++ inputs.nixos-config-work.outputs.host_configs;
+    };
     checks = {
       x86_64-linux = {
         pre-commit-check = pre-commit-hooks.lib.x86_64-linux.run {
