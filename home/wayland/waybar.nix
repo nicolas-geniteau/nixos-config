@@ -6,6 +6,7 @@
         spacing = 0;
         modules-left = ["river/tags" "river/window"];
         modules-right = [
+          "mpris"
           "privacy"
           "idle_inhibitor"
           "cpu"
@@ -69,6 +70,9 @@
           format-plugged = "{capacity}% ";
           format-alt = "{time} {icon}";
           format-icons = ["" "" "" "" ""];
+        };
+        mpris = {
+          format = "🎵 {artist} - {title} 🎵";
         };
         network = {
           format-wifi = "{essid} ({signalStrength}%) ";
@@ -230,6 +234,10 @@
 
       #privacy-item.audio-in {
         background-color: #1ca000;
+      }
+
+      #mpris {
+        color: #2980b9;
       }
     '';
   };
