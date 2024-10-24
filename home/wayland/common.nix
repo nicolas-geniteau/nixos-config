@@ -10,7 +10,7 @@
     font-awesome
     (nerdfonts.override { fonts = [ "Hack" ]; })
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
   ];
 
