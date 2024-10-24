@@ -9,13 +9,12 @@
     ../modules/printers.nix
     ../modules/scanners.nix
     ../modules/sound.nix
+    ../modules/yubikey.nix
   ];
 
   networking.hostName = "nuc";
 
   networking.wireless.iwd.enable = false;
-
-  services.pcscd.enable = true;
 
   users.users.nicolas.extraGroups = ["scanner" "lp"];
 }
